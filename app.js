@@ -107,28 +107,40 @@ function initRoiCalculator() {
   if (!budgetInput || !cplInput || !closeRateInput || !dealValueInput) return;
 
   const calculateROI = () => {
-    const budget = parseFloat(budgetInput.value);
-    const cpl = parseFloat(cplInput.value);
-    const closeRate = parseFloat(closeRateInput.value) / 100;
-    const dealValue = parseFloat(dealValueInput.value);
+    let budget = parseFloat(budgetInput.value);
+    if (isNaN(budget) || !isFinite(budget)) budget = 0;
+    budget = Math.max(0, budget);
+
+    let cpl = parseFloat(cplInput.value);
+    if (isNaN(cpl) || !isFinite(cpl)) cpl = 0;
+    cpl = Math.max(0, cpl);
+
+    let closeRatePercent = parseFloat(closeRateInput.value);
+    if (isNaN(closeRatePercent) || !isFinite(closeRatePercent)) closeRatePercent = 0;
+    closeRatePercent = Math.max(0, closeRatePercent);
+    const closeRate = closeRatePercent / 100;
+
+    let dealValue = parseFloat(dealValueInput.value);
+    if (isNaN(dealValue) || !isFinite(dealValue)) dealValue = 0;
+    dealValue = Math.max(0, dealValue);
 
     // Update Slider Displays
-    budgetVal.textContent = budget.toLocaleString();
-    cplVal.textContent = cpl;
-    closeRateVal.textContent = Math.round(closeRate * 100);
-    dealValueVal.textContent = dealValue.toLocaleString();
+    if (budgetVal) budgetVal.textContent = budget.toLocaleString();
+    if (cplVal) cplVal.textContent = cpl.toString();
+    if (closeRateVal) closeRateVal.textContent = Math.round(closeRate * 100).toString();
+    if (dealValueVal) dealValueVal.textContent = dealValue.toLocaleString();
 
     // Calculations
-    const leads = Math.floor(budget / cpl);
+    const leads = cpl !== 0 ? Math.floor(budget / cpl) : 0;
     const deals = Math.floor(leads * closeRate);
     const revenue = deals * dealValue;
-    const roiRatio = budget > 0 ? (revenue / budget).toFixed(1) : "0.0";
+    const roiRatio = (budget > 0 && isFinite(revenue) && !isNaN(revenue)) ? (revenue / budget).toFixed(1) : "0.0";
 
     // Update UI Results
-    resultLeads.textContent = leads.toLocaleString();
-    resultDeals.textContent = deals.toLocaleString();
-    resultRevenue.textContent = `$${revenue.toLocaleString()}`;
-    resultRoi.textContent = roiRatio;
+    if (resultLeads) resultLeads.textContent = leads.toLocaleString();
+    if (resultDeals) resultDeals.textContent = deals.toLocaleString();
+    if (resultRevenue) resultRevenue.textContent = `$${revenue.toLocaleString()}`;
+    if (resultRoi) resultRoi.textContent = roiRatio;
   };
 
   // Attach Event Listeners
@@ -326,8 +338,11 @@ function highlightActiveLink() {
   const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
   
   navLinks.forEach(link => {
+    const hrefAttr = link.getAttribute('href');
+    if (!hrefAttr) return; // Null guard
+    
     // Extract file name from href e.g. "about.html" or "about.html#contact"
-    const hrefVal = link.getAttribute('href').split('#')[0];
+    const hrefVal = hrefAttr.split('#')[0];
     const linkPath = hrefVal.split('/').pop() || 'index.html';
     
     if (linkPath === currentPath) {
@@ -526,9 +541,16 @@ function initInstantAuditScanner() {
 
   if (!auditForms.length || !overlay || !progressFill) return;
 
+  let scannerTimeouts = [];
+  const clearScannerTimeouts = () => {
+    scannerTimeouts.forEach(clearTimeout);
+    scannerTimeouts = [];
+  };
+
   auditForms.forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      clearScannerTimeouts();
       const inputField = form.querySelector('.audit-search-input');
       const urlVal = inputField.value.trim() || 'yourwebsite.com';
       
@@ -541,30 +563,30 @@ function initInstantAuditScanner() {
         if (step) step.className = 'scan-step-item';
       });
       
-      setTimeout(() => {
+      scannerTimeouts.push(setTimeout(() => {
         if (step1) step1.classList.add('active');
         progressFill.style.width = '35%';
-      }, 400);
+      }, 400));
 
-      setTimeout(() => {
+      scannerTimeouts.push(setTimeout(() => {
         if (step1) {
           step1.classList.remove('active');
           step1.classList.add('completed');
         }
         if (step2) step2.classList.add('active');
         progressFill.style.width = '70%';
-      }, 1800);
+      }, 1800));
 
-      setTimeout(() => {
+      scannerTimeouts.push(setTimeout(() => {
         if (step2) {
           step2.classList.remove('active');
           step2.classList.add('completed');
         }
         if (step3) step3.classList.add('active');
         progressFill.style.width = '100%';
-      }, 3200);
+      }, 3200));
 
-      setTimeout(() => {
+      scannerTimeouts.push(setTimeout(() => {
         if (step3) {
           step3.classList.remove('active');
           step3.classList.add('completed');
@@ -572,7 +594,7 @@ function initInstantAuditScanner() {
         scannerPanel.style.display = 'none';
         reportPanel.style.display = 'block';
         if (reportUrl) reportUrl.textContent = urlVal;
-      }, 4500);
+      }, 4500));
     });
   });
 
@@ -580,12 +602,14 @@ function initInstantAuditScanner() {
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
       overlay.style.display = 'none';
+      clearScannerTimeouts();
     });
   }
   
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
       overlay.style.display = 'none';
+      clearScannerTimeouts();
     }
   });
 }
@@ -607,8 +631,11 @@ function initBeforeAfterSliders() {
 
     const updateSlider = (clientX) => {
       const rect = container.getBoundingClientRect();
-      const x = clientX - rect.left;
-      let percentage = (x / rect.width) * 100;
+      let percentage = 50;
+      if (typeof clientX === 'number' && !isNaN(clientX) && rect && rect.width > 0) {
+        const x = clientX - rect.left;
+        percentage = (x / rect.width) * 100;
+      }
       
       if (percentage < 0) percentage = 0;
       if (percentage > 100) percentage = 100;
@@ -616,8 +643,9 @@ function initBeforeAfterSliders() {
       handle.style.left = `${percentage}%`;
       afterPane.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
       
-      const beforeLabel = container.parentElement.querySelector('.val-before');
-      const afterLabel = container.parentElement.querySelector('.val-after');
+      const parent = container.parentElement;
+      const beforeLabel = parent ? parent.querySelector('.val-before') : null;
+      const afterLabel = parent ? parent.querySelector('.val-after') : null;
       
       if (beforeLabel && afterLabel) {
         const progressVal = Math.round(120 + (percentage / 100) * (1840 - 120));
@@ -633,13 +661,13 @@ function initBeforeAfterSliders() {
 
     const onStart = (e) => {
       isDragging = true;
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientX = (e.touches && e.touches[0]) ? e.touches[0].clientX : e.clientX;
       updateSlider(clientX);
     };
 
     const onMove = (e) => {
       if (!isDragging) return;
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientX = (e.touches && e.touches[0]) ? e.touches[0].clientX : e.clientX;
       updateSlider(clientX);
     };
 

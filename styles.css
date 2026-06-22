@@ -886,11 +886,13 @@ ul {
 
 .calc-sliders {
   padding: 3rem;
-  background: #0F172A !important;
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: #FFFFFF !important;
-  border: 1px solid #1E293B !important;
+  border: 1px solid var(--glass-border) !important;
   border-radius: var(--radius-md) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: var(--glass-shadow) !important;
 }
 
 .slider-group {
@@ -931,6 +933,18 @@ ul {
   appearance: none;
 }
 
+input[type="checkbox"].slider-input {
+  -webkit-appearance: checkbox !important;
+  appearance: checkbox !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.slider-input:focus-visible {
+  outline: 2px solid var(--accent-indigo) !important;
+  outline-offset: 2px;
+}
+
 .slider-input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -961,10 +975,13 @@ ul {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background: #0F172A !important;
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: #FFFFFF !important;
-  border: 1px solid #1E293B !important;
+  border: 1px solid var(--glass-border) !important;
   border-radius: var(--radius-md) !important;
+  box-shadow: var(--glass-shadow) !important;
 }
 
 .calc-results::before {
@@ -1664,17 +1681,6 @@ textarea.form-input {
   margin-bottom: 1.5rem;
   position: relative;
   letter-spacing: -0.01em;
-}
-
-.footer-col h4::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-  width: 20px;
-  height: 2px;
-  background: var(--accent-indigo);
-  border-radius: var(--radius-full);
 }
 
 .footer-col h4::after {
@@ -2529,13 +2535,13 @@ textarea.form-input {
 
 .map-listing.vantage-client.ranking-up {
   border-color: #FFFFFF !important; /* White border */
-  background: #10B981 !important; /* Emerald back */
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4) !important;
+  background: #064E3B !important; /* Dark Forest Green */
+  box-shadow: 0 0 20px rgba(6, 78, 59, 0.4) !important;
 }
 
 .map-listing.vantage-client.ranking-up .map-listing-rank {
   background: #FFFFFF !important;
-  color: #10B981 !important;
+  color: #064E3B !important;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
 }
 
@@ -2552,7 +2558,7 @@ textarea.form-input {
 }
 
 .map-listing.vantage-client.ranking-up .map-action-icon {
-  color: #10B981 !important;
+  color: #064E3B !important;
   border-color: #FFFFFF !important;
   background: #FFFFFF !important;
   animation: ring 1.5s infinite alternate ease-in-out;
