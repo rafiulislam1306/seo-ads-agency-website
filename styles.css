@@ -383,7 +383,7 @@ ul {
 
 .hero-grid {
   display: grid;
-  grid-template-cols: 1.1fr 0.9fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 4rem;
   align-items: center;
 }
@@ -789,7 +789,7 @@ ul {
 
 .services-grid {
   display: grid;
-  grid-template-cols: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -879,7 +879,7 @@ ul {
 
 .calculator-grid {
   display: grid;
-  grid-template-cols: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
@@ -1020,7 +1020,7 @@ ul {
 
 .result-breakdown {
   display: grid;
-  grid-template-cols: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
@@ -1164,7 +1164,7 @@ ul {
    ========================================== */
 .case-studies-grid {
   display: grid;
-  grid-template-cols: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.25rem;
 }
 
@@ -1231,7 +1231,7 @@ ul {
 .case-stats {
   margin-top: auto;
   display: grid;
-  grid-template-cols: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   padding-top: 1.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1439,7 +1439,7 @@ ul {
 
 .contact-grid {
   display: grid;
-  grid-template-cols: 0.9fr 1.1fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 4rem;
 }
 
@@ -1598,7 +1598,7 @@ textarea.form-input {
 
 .footer-grid {
   display: grid;
-  grid-template-cols: 1.5fr 1fr 1fr 1.25fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
   gap: 4rem;
   margin-bottom: 4rem;
 }
@@ -1855,7 +1855,7 @@ textarea.form-input {
 
 @media (max-width: 1024px) {
   .hero-grid {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
   }
@@ -1874,11 +1874,11 @@ textarea.form-input {
   }
   
   .services-grid, .case-studies-grid {
-    grid-template-cols: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .calculator-grid {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 2.5rem;
   }
   
@@ -1900,12 +1900,12 @@ textarea.form-input {
     font-size: 2.25rem;
   }
   
-  .nav-links, .nav-actions .btn-secondary {
+  .nav-links, .nav-actions .btn-secondary, .nav-actions .btn-primary {
     display: none; /* Hide on mobile, handled by responsive menu */
   }
   
   .footer-grid {
-    grid-template-cols: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
   
@@ -1948,7 +1948,7 @@ textarea.form-input {
   }
   
   .contact-grid {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
   }
   
   .contact-info {
@@ -1988,7 +1988,7 @@ textarea.form-input {
   }
   
   .services-grid, .case-studies-grid, .footer-grid {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
   }
   
   .tab-btn {
@@ -2001,7 +2001,7 @@ textarea.form-input {
   }
   
   .result-breakdown {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
   }
   
   .footer-bottom {
@@ -2042,7 +2042,7 @@ textarea.form-input {
 /* Checklist Grid */
 .checklist-grid {
   display: grid;
-  grid-template-cols: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2.5rem;
 }
@@ -2086,7 +2086,7 @@ textarea.form-input {
 /* About Team Section */
 .team-grid {
   display: grid;
-  grid-template-cols: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -2135,7 +2135,7 @@ textarea.form-input {
 /* Technology Stack Grid */
 .tool-grid {
   display: grid;
-  grid-template-cols: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
   margin-top: 3rem;
 }
@@ -2182,7 +2182,7 @@ textarea.form-input {
 
 .calendar-grid {
   display: grid;
-  grid-template-cols: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
 }
 
@@ -2237,7 +2237,7 @@ textarea.form-input {
 
 .time-slots {
   display: none;
-  grid-template-cols: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
   margin-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -2278,25 +2278,25 @@ textarea.form-input {
 
 @media (max-width: 1024px) {
   .team-grid {
-    grid-template-cols: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .tool-grid {
-    grid-template-cols: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .checklist-grid {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
   }
   .team-grid, .tool-grid {
-    grid-template-cols: 1fr;
+    grid-template-columns: 1fr;
   }
   .subpage-hero h1 {
     font-size: 2.5rem;
   }
   .time-slots {
-    grid-template-cols: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2377,7 +2377,7 @@ textarea.form-input {
 .serp-headline {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #2563EB !important; /* Royal Blue ad link */
+  color: #60A5FA !important; /* Royal Blue ad link */
   margin-bottom: 0.25rem;
   line-height: 1.3;
 }
@@ -2398,7 +2398,7 @@ textarea.form-input {
 
 .serp-extensions {
   display: grid;
-  grid-template-cols: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
   border-top: 1px solid #334155 !important;
   padding-top: 0.75rem;
@@ -2407,7 +2407,7 @@ textarea.form-input {
 .serp-extension-item h5 {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #2563EB !important;
+  color: #60A5FA !important;
   margin-bottom: 0.15rem;
 }
 

@@ -79,7 +79,7 @@
         <p>Simulate ad deployment. Calibrate service vectors and geographical targets to preview ad formatting in real-time.</p>
       </div>
 
-      <div class="calculator-grid" style="grid-template-cols: 0.9fr 1.1fr; gap: 3rem; align-items: start;">
+      <div class="calculator-grid" style="grid-template-columns: 0.9fr 1.1fr; gap: 3rem; align-items: start;">
         <!-- Input controls -->
         <div class="calc-sliders glass" style="padding: 2.5rem; margin-top: 0.5rem;">
           <div class="form-group">
@@ -223,8 +223,6 @@
               <!-- Before Area Fill -->
               <path d="M 0 200 L 100 190 L 200 205 L 300 195 L 400 200 L 500 185 L 600 190 L 600 240 L 0 240 Z" fill="rgba(154, 160, 166, 0.05)"/>
               
-              <!-- Label -->
-              <text x="30" y="50" fill="var(--text-muted)" font-size="14" font-weight="700" font-family="var(--font-heading)">BEFORE VANTAGE: Ad Spend Leakage</text>
             </svg>
           </div>
           
@@ -247,8 +245,12 @@
                   <stop offset="100%" stop-color="var(--accent-indigo)" stop-opacity="0.0"/>
                 </linearGradient>
               </defs>
-              
-              <!-- Label -->
+            </svg>
+          </div>
+          
+          <div class="slider-labels" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; padding: 1.5rem; box-sizing: border-box;">
+            <svg width="100%" height="100%" viewBox="0 0 600 240" preserveAspectRatio="none" style="overflow: visible;">
+              <text x="350" y="50" fill="var(--text-muted)" font-size="14" font-weight="700" font-family="var(--font-heading)">BEFORE VANTAGE: Ad Spend Leakage</text>
               <text x="30" y="50" fill="var(--accent-indigo)" font-size="14" font-weight="700" font-family="var(--font-heading)">AFTER VANTAGE: 15.4% Yield Target</text>
             </svg>
           </div>
@@ -283,7 +285,7 @@
         <p>Calibrate ad spend and conversion rates to simulate inquiry yield expansion and subsequent CPL reduction.</p>
       </div>
 
-      <div class="calculator-grid" style="grid-template-cols: 1.1fr 0.9fr; gap: 3rem;">
+      <div class="calculator-grid" style="grid-template-columns: 1.1fr 0.9fr; gap: 3rem;">
         <div class="calc-sliders glass" style="padding: 2.5rem;">
           <div class="slider-group">
             <div class="slider-header">
@@ -416,7 +418,7 @@
       document.getElementById('cro-val-rate').textContent = (conversionRate * 100).toFixed(1);
 
       const clicks = budget / cpc;
-      const leads = Math.floor(clicks * conversionRate);
+      const leads = Math.round(clicks * conversionRate);
       const cpl = leads > 0 ? (budget / leads) : budget;
 
       document.getElementById('cro-result-leads').textContent = leads.toLocaleString();

@@ -495,6 +495,11 @@ function initMapPackBooster() {
         reviewsCount.textContent = '5.0 (148 Reviews) • Open';
       }
       
+      const ratingStars = clientListing.querySelector('.rating-stars');
+      if (ratingStars) {
+        ratingStars.textContent = '★★★★★';
+      }
+      
       triggerBtn.textContent = 'Domination Achieved! Rank #1';
       triggerBtn.style.background = 'var(--accent-emerald)';
       triggerBtn.style.borderColor = 'transparent';
