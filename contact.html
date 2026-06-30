@@ -17,7 +17,7 @@
     <div class="container">
       <a href="index.html" class="logo">
         <span class="logo-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" class="logo-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="20" x2="18" y2="10"></line>
             <line x1="12" y1="20" x2="12" y2="4"></line>
             <line x1="6" y1="20" x2="6" y2="14"></line>
@@ -29,17 +29,16 @@
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="google-ads.html" class="nav-link">Google Ads</a>
-        <a href="local-seo.html" class="nav-link">Local SEO</a>
+        <a href="local-seo.html" class="nav-link">Google Maps</a>
         <a href="case-studies.html" class="nav-link">Case Studies</a>
-        <a href="about.html" class="nav-link">About</a>
+        <a href="about.html" class="nav-link">About Us</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="index.html#calculator" class="btn btn-secondary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">Yield Model</a>
-        <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;" id="nav-cta">Confidential Audit</a>
+        <a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;" id="nav-cta">Get Free Audit</a>
         <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <svg xmlns="http://www.w3.org/2000/svg" class="nav-toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -54,19 +53,19 @@
     <button class="mobile-close-btn" id="mobile-close" aria-label="Close Menu">&times;</button>
     <a href="index.html" class="mobile-nav-link">Home</a>
     <a href="google-ads.html" class="mobile-nav-link">Google Ads</a>
-    <a href="local-seo.html" class="mobile-nav-link">Local SEO</a>
+    <a href="local-seo.html" class="mobile-nav-link">Google Maps</a>
     <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
-    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="about.html" class="mobile-nav-link">About Us</a>
     <a href="contact.html" class="mobile-nav-link">Contact</a>
-    <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem;">Confidential Audit</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem;">Get Free Audit</a>
   </div>
 
   <!-- SUBPAGE HERO -->
   <section class="subpage-hero">
     <div class="container">
-      <span class="section-header" style="margin-bottom: 0.5rem;"><span class="tag">Confidential Advisory</span></span>
-      <h1>Initiate Telemetry Calibration</h1>
-      <p>Schedule a confidential video advisory session with our search architects, or request a complete competitor search intelligence report below.</p>
+      <span class="section-header" style="margin-bottom: 0.5rem;"><span class="tag">Contact Us</span></span>
+      <h1>Schedule a Strategy Call</h1>
+      <p>Schedule a free video call with our team, or send us a message below to request a free competitor search report.</p>
     </div>
   </section>
 
@@ -78,11 +77,11 @@
         <!-- Column 1: Video Call Scheduler -->
         <div>
           <span class="section-header" style="text-align: left; margin: 0 0 1.5rem 0;">
-            <span class="tag" style="border-color: rgba(99,102,241,0.3); color: var(--accent-indigo); background: rgba(99,102,241,0.05);">Option A: Live Advisory</span>
-            <h2 style="font-size: 1.75rem; margin-top: 0.5rem;">Book a Telemetry Briefing</h2>
+            <span class="tag" style="border-color: rgba(99,102,241,0.3); color: var(--accent-indigo); background: rgba(99,102,241,0.05);">Option A: Schedule a Call</span>
+            <h2 style="font-size: 1.75rem; margin-top: 0.5rem;">Book a Free Strategy Call</h2>
           </span>
           <p style="color:var(--text-secondary); margin-bottom: 2rem; font-size:0.95rem;">
-            Select an available advisory window from the calendar matrix below. We will analyze your search competitor landscape live during our call.
+            Select an available day and time from the calendar below. We will analyze your local competitors live during our call.
           </p>
           
           <div class="scheduler-card glass" id="scheduler-wrapper">
@@ -145,7 +144,7 @@
             <!-- Booking Confirmation Button Box -->
             <div class="booking-confirm-box" id="booking-confirm">
               <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Selected: <strong id="selected-booking-date" style="color:var(--accent-emerald);">None</strong></p>
-              <button class="btn btn-primary" id="confirm-booking-btn" style="width: 100%;">Confirm Strategy Consultation</button>
+              <button class="btn btn-primary" id="confirm-booking-btn" style="width: 100%;">Confirm Strategy Call</button>
             </div>
           </div>
         </div>
@@ -153,17 +152,17 @@
         <!-- Column 2: Standard Audit Form -->
         <div>
           <span class="section-header" style="text-align: left; margin: 0 0 1.5rem 0;">
-            <span class="tag" style="border-color: rgba(16,185,129,0.3); color: var(--accent-emerald); background: rgba(16,185,129,0.05);">Option B: Offline Telemetry</span>
-            <h2 style="font-size: 1.75rem; margin-top: 0.5rem;">Request Search Intelligence Report</h2>
+            <span class="tag" style="border-color: rgba(16,185,129,0.3); color: var(--accent-emerald); background: rgba(16,185,129,0.05);">Option B: Request a Report</span>
+            <h2 style="font-size: 1.75rem; margin-top: 0.5rem;">Get Your Free Competitor Report</h2>
           </span>
           <p style="color:var(--text-secondary); margin-bottom: 2rem; font-size:0.95rem;">
-            Prefer an offline briefing document? Submit your credentials below. Our engineers will compile your competitor search audit and transmit it within 24 hours.
+            Want a detailed report sent to you? Fill out the form below. We will analyze your competitors and send you a custom report in 24 hours.
           </p>
 
           <div class="contact-form-panel glass" id="form-panel" style="padding: 2.5rem;">
             <form id="lead-form" onsubmit="handleFormSubmit(event)">
               <div class="form-group">
-                <label for="business-name" class="form-label">Enterprise / Domain Name</label>
+                <label for="business-name" class="form-label">Business Name</label>
                 <input type="text" id="business-name" class="form-input" placeholder="e.g. Acme Services" required>
               </div>
 
@@ -173,33 +172,33 @@
               </div>
 
               <div class="form-group">
-                <label for="lead-goal" class="form-label">Strategic Objective</label>
+                <label for="lead-goal" class="form-label">What is your main goal?</label>
                 <select id="lead-goal" class="form-input" style="appearance: none;" required>
                   <option value="" disabled selected>Select an option...</option>
-                  <option value="ads">Paid Search Acceleration (Google Ads Focus)</option>
-                  <option value="seo">Local Organic Dominance (Map Pack Focus)</option>
-                  <option value="both">Integrated Market Dominance</option>
+                  <option value="ads">Grow with Google Ads</option>
+                  <option value="seo">Rank Higher on Google Maps</option>
+                  <option value="both">Both (Google Ads & SEO)</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="client-name" class="form-label">Authorized Contact Name</label>
+                <label for="client-name" class="form-label">Your Name</label>
                 <input type="text" id="client-name" class="form-input" placeholder="e.g. John Doe" required>
               </div>
 
               <div class="grid-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
                 <div class="form-group" style="margin-bottom: 0;">
-                  <label for="client-email" class="form-label">Corporate Email Address</label>
+                  <label for="client-email" class="form-label">Your Email Address</label>
                   <input type="email" id="client-email" class="form-input" placeholder="e.g. john@website.com" required>
                 </div>
                 <div class="form-group" style="margin-bottom: 0;">
-                  <label for="client-phone" class="form-label">Direct Phone Number</label>
+                  <label for="client-phone" class="form-label">Phone Number</label>
                   <input type="tel" id="client-phone" class="form-input" placeholder="e.g. (555) 012-3456" required>
                 </div>
               </div>
 
               <button type="submit" class="btn btn-primary form-submit-btn" style="width: 100%;">
-                <span>Generate Competitor Search Intelligence Report</span>
+                <span>Request My Free Competitor Report</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
               </button>
             </form>
@@ -209,8 +208,8 @@
               <div class="success-icon-wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              <h3>Search Audit Queued!</h3>
-              <p>Our engineers are crawling your competitive search landscape now. The strategic telemetry report will be dispatched to <strong id="submitted-email">your email</strong> within 24 hours.</p>
+              <h3>Competitor Audit Requested!</h3>
+              <p>We are scanning your competitor search landscape now. We will email your custom report to <strong id="submitted-email">your email</strong> within 24 hours.</p>
               <button class="btn btn-secondary" onclick="resetForm()">Request Another Report</button>
             </div>
           </div>
@@ -227,7 +226,7 @@
         <div class="footer-info">
           <a href="index.html" class="logo">
             <span class="logo-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" class="logo-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="20" x2="18" y2="10"></line>
                 <line x1="12" y1="20" x2="12" y2="4"></line>
                 <line x1="6" y1="20" x2="6" y2="14"></line>
@@ -267,7 +266,7 @@
           <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
             <div class="newsletter-input-group">
               <input type="email" class="newsletter-input" placeholder="Your work email" required>
-              <button type="submit" class="newsletter-submit-btn" aria-label="Subscribe"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+              <button type="submit" class="newsletter-submit-btn" aria-label="Subscribe"><svg xmlns="http://www.w3.org/2000/svg" class="newsletter-submit-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
             </div>
             <span class="newsletter-text">Strictly value. Unsubscribe anytime.</span>
           </form>

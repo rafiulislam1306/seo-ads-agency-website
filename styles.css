@@ -39,6 +39,9 @@
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  --section-padding: 6rem 1.5rem;
+  --container-width: 1280px;
 }
 
 /* ==========================================
@@ -262,27 +265,37 @@ ul {
    ========================================== */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  max-width: 1200px;
   z-index: 100;
-  padding: 1.5rem 0;
+  padding: 0.65rem 2rem;
+  background: rgba(8, 12, 20, 0.4); /* Subtle dark glass overlay */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 99px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   transition: all var(--transition-normal);
 }
 
 .navbar.scrolled {
-  padding: 1rem 0;
-  background: rgba(8, 12, 20, 0.85); /* Blurred dark glass background */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  top: 1rem;
+  background: rgba(8, 12, 20, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.2) inset;
 }
 
 .navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .logo {
@@ -337,11 +350,13 @@ ul {
   border-radius: var(--radius-full);
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--text-primary);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -385,7 +400,7 @@ ul {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 4rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .hero-content {
@@ -481,11 +496,6 @@ ul {
 .visual-container {
   position: relative;
   width: 100%;
-  border-radius: var(--radius-lg);
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Glass Dashboard Mockup */

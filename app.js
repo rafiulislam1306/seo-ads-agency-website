@@ -465,7 +465,7 @@ function initMapPackBooster() {
 
   triggerBtn.addEventListener('click', () => {
     triggerBtn.disabled = true;
-    triggerBtn.textContent = 'Analyzing Directory Signals...';
+    triggerBtn.textContent = 'Checking Google Listings...';
     triggerBtn.style.cursor = 'not-allowed';
     
     clientListing.classList.add('ranking-up');
@@ -479,7 +479,7 @@ function initMapPackBooster() {
         clientListing.querySelector('.map-listing-rank').textContent = '3';
         listC.querySelector('.map-listing-rank').textContent = '4';
       }
-      triggerBtn.textContent = 'Building Citations & Consistency...';
+      triggerBtn.textContent = 'Adding Business to Directories...';
     }, 1500);
 
     // Step 2: Rise to #2
@@ -491,7 +491,7 @@ function initMapPackBooster() {
         clientListing.querySelector('.map-listing-rank').textContent = '2';
         listB.querySelector('.map-listing-rank').textContent = '3';
       }
-      triggerBtn.textContent = 'Acquiring Verified Client Reviews...';
+      triggerBtn.textContent = 'Checking Local Customer Reviews...';
     }, 3000);
 
     // Step 3: Rise to #1
@@ -515,7 +515,7 @@ function initMapPackBooster() {
         ratingStars.textContent = '★★★★★';
       }
       
-      triggerBtn.textContent = 'Domination Achieved! Rank #1';
+      triggerBtn.textContent = 'Rank #1 Reached!';
       triggerBtn.style.background = 'var(--accent-emerald)';
       triggerBtn.style.borderColor = 'transparent';
       triggerBtn.style.boxShadow = '0 0 15px rgba(16, 185, 129, 0.4)';
